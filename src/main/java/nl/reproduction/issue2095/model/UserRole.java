@@ -11,9 +11,10 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 @Entity
-//@Table(name="USER_ROLES", indexes = {@Index(name="role_user_idx", columnList="username, role")})
 //The unique constraint does not work either, it throws an exception about not able to find column role. Very strange
-@Table(name="USER_ROLES", uniqueConstraints = @UniqueConstraint(columnNames = { "username", "role"}))
+@Table(name="USER_ROLES", uniqueConstraints = @UniqueConstraint(columnNames = { "username", "role"}, name="unique_entry"))
+// Following does work
+//@Table(name="USER_ROLES")
 public class UserRole {
 	
 	@Id
@@ -21,7 +22,7 @@ public class UserRole {
 	@Column(name = "id", unique = true, nullable = false)
 	public Integer id;
 	
-	@Column(name = "role", nullable = false, length = 45)
+	@Column(name = "`role`", nullable = false, length = 45)
 	private String role;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
