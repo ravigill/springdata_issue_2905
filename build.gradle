@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '1.2.0.RC2'
+        springBootVersion = '1.2.1.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -38,11 +38,14 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-aop")
     compile("org.springframework.boot:spring-boot-starter-jdbc")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile("org.springframework.boot:spring-boot-starter-data-elasticsearch")
+    compile("org.hsqldb:hsqldb")
+    
+    // Take out elasticsearch
+    //compile("org.springframework.boot:spring-boot-starter-data-elasticsearch")
     compile("org.springframework.boot:spring-boot-starter-websocket")
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-    compile("org.springframework.social:spring-social-security")
-    compile("org.springframework.social:spring-social-facebook-web")
+    //compile("org.springframework.social:spring-social-security")
+    //compile("org.springframework.social:spring-social-facebook-web")
     compile("org.springframework.boot:spring-boot-starter-social-facebook")
     compile("org.springframework.boot:spring-boot-starter-social-linkedin")
     compile("org.springframework.boot:spring-boot-starter-social-twitter")
