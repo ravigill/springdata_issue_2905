@@ -38,19 +38,15 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-aop")
     compile("org.springframework.boot:spring-boot-starter-jdbc")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile("org.hsqldb:hsqldb")
-    
-    // Take out elasticsearch
-    //compile("org.springframework.boot:spring-boot-starter-data-elasticsearch")
+    compile("org.springframework.boot:spring-boot-starter-data-elasticsearch")
     compile("org.springframework.boot:spring-boot-starter-websocket")
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-    //compile("org.springframework.social:spring-social-security")
-    //compile("org.springframework.social:spring-social-facebook-web")
     compile("org.springframework.boot:spring-boot-starter-social-facebook")
     compile("org.springframework.boot:spring-boot-starter-social-linkedin")
     compile("org.springframework.boot:spring-boot-starter-social-twitter")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("org.springframework.boot:spring-boot-starter-remote-shell")
+    compile("org.springframework.social:spring-social-facebook-web")
     compile("mysql:mysql-connector-java:5.1.28")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
@@ -65,3 +61,4 @@ eclipse {
 task wrapper(type: Wrapper) {
     gradleVersion = '1.12'
 }
+

@@ -38,19 +38,19 @@ public class UserDetailService implements UserDetailsService{
 			List<GrantedAuthority> authorities = buildUserAuthority(user.getUserRoles());
 			return buildUserForAuthentication(user, authorities);
 		}
-	 
+
 		private User buildUserForAuthentication(nl.reproduction.issue2095.model.User user, 
-			List<GrantedAuthority> authorities) {
-			return new User(
-					user.getUsername(), 
-					user.getPassword(),
-					user.getEnabled(), 
-					true, 
-					true, 
-					true, 
-					authorities
-					);
-		}
+				List<GrantedAuthority> authorities) {
+				return new User(
+						user.getUsername(), 
+						user.getPassword(),
+						user.isEnabled(), 
+						true, 
+						true, 
+						true, 
+						authorities
+						);
+			}
 	 
 		private List<GrantedAuthority> buildUserAuthority(Set<UserRole> userRoles) {
 			Set<GrantedAuthority> setAuths = new HashSet<GrantedAuthority>();
